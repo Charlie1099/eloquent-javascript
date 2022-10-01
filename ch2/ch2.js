@@ -76,5 +76,52 @@ if (!Number.isNaN(theyNumber)) {
 } else {
     console.log("Hey where is my number?")
 }
-// also you can chain more else statments on
+// also you can chain more else statments if you so chose
 
+/*
+While and do Loops
+The purpuse of these are if you had a program you wanted to run multiple time to get to a value and then
+continue from where it left off when it got to that point and continue runing for example
+*/
+let number = 0;
+while (number <= 12) {
+    console.log(number);
+    number = number + 2;
+};// this will incriment the value of number by 2 each time untell number is equle to 12 untell it eveluates to true.
+
+// you can have more than one value in a while remaber the condition in the () will be evealuated and wen true the while loop stops
+let result = 1;
+let counter = 0;
+while (counter < 10) {
+    result = result * 2;
+    counter = counter + 1;
+    
+}
+console.log(result);//1024
+// if you switch out the values it would still work and counter would give you the amount of times that it incresed be for the while = true
+
+/* 
+There also whats called a "do while" statement it differs from a while statment in that it will exeutes at lest once there 
+is a great explination at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while
+here is an exampile
+*/
+let yourName;
+do {
+    yourName = prompt("what is your name?");
+} while (!yourName);
+console.log(yourName);
+// The do statment is whats going to run at least once and then the while is the condition that if it is true is will keep runing untell false
+
+/*
+for Loops
+Many loops follow the same pattern as while loops in that there is a counter binding a while condition and the the
+test expression there must be two ;
+   counter binding | while condition | tester to see if the end value is meet*/
+for(let number = 0; number <= 12; number = number * 2) {
+    console.log(number)
+}// this is exactly the same as the while loop on line 93 to 100.
+
+/*
+Breaking out of a Loop
+you can insert a brake statment in a loop if the end condition = true and there is a chance that it will enter an infinite loop
+*/
