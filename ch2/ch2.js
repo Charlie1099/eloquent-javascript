@@ -117,11 +117,35 @@ for Loops
 Many loops follow the same pattern as while loops in that there is a counter binding a while condition and the the
 test expression there must be two ;
    counter binding | while condition | tester to see if the end value is meet*/
-for(let number = 0; number <= 12; number = number * 2) {
+   
+for(let number = 0; number <= 12; number = number + 2) {
     console.log(number)
-}// this is exactly the same as the while loop on line 93 to 100.
+};// this is exactly the same as the while loop on line 93 to 100.
 
 /*
 Breaking out of a Loop
 you can insert a brake statment in a loop if the end condition = true and there is a chance that it will enter an infinite loop
 */
+
+/*
+Switch's
+There is a construct called switch that will help you avoid haveing to use a long if else statement
+that should look better for example
+*/
+switch (prompt("What is the wether like?")) {
+    case "rainy":
+        console.log("Get a umbrella!")
+        break;
+    case "sunny":
+        console.log("Dress light")
+        
+    case "cloudy":
+        console.log("Go out side")
+        break;    
+    default:
+        console.log("Unknown weather!!!!")
+        break;
+};// if you want to run code across two case's then you can ommit the break statment
+
+// There is a capitalization standard that is followed in javaScript where the first word is not capitalized but any word after is 
+// As alway comment your cod to describe what is going on
