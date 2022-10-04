@@ -47,9 +47,13 @@ for(y = 0; y < size; y++) {
         } else {
             board += "#"
         }
+        
     }
     // this will cuase the pattern that we need by useing an escape
     board += "\n"
+    // console.log(board) 
+    
+    
 }
 console.log(board)
 
