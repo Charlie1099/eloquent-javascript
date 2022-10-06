@@ -94,11 +94,80 @@ JavaScript distinguishes not just global and local bindings. Blocks and function
 makeing multiple degrees of locality.
 */
 const hummus = function(factor){
+    // the code in this function can not see the code in the ingredient function
     const ingredient = function(amount, unit, name) {
+        // the code can see the cose in this function and the outer function like the factor binding
         let ingredientAmount = amount * factor;
         if (ingredientAmount > 1) {
             unit += "s";
         }
-    }
+    
+    console.log(`${ingredientAmount} ${unit} ${name}`)
+};
+ingredient(1, "can", "chickpeas");
+ingredient(0.25, "cup", "tahini");
+ingredient(0.25, "cup", "lemon juice");
+ingredient(1, "clove", "garlic");
+ingredient(2, "tablespoon", "olive oil");
+ingredient(0.5, "teaspoon", "cumin");
 
+};
+
+/* 
+JavaScript uses what is called lexical scoping wich is what is the above function. the set of bindings visible
+is determined by the place of that block in the program text. each local scope can also see all the local scopes 
+that contain it, and all scopes can see the global scope agian this approach is called lexical scoping
+*/
+
+/* 
+Functions as Values
+
+A functions binding/name is just that it acts as the name for that specific peace of program and once
+defined it does not change DO NOT CONFUSE it with the function and its value they are diffrint things
+
+The function value can do all the things that other values can do you can pass it as an argument 
+to a diffrent function you can pass it as a argument to a fuction if it is a var, or a let
+it can be assigned a new value like so
+*/
+let launchMissiles = function() {
+    missleSystem.launch("now");
+
+if(safeMode) {
+    launchMissiles = function() {/* do nothing */}
+};
+};
+/* 
+Declaration Notation
+There is a shorter way to create a funtion binding it does work diffrently but what you would do is this
+you put the keyword function first and then the function binding name followed by the () and body {}
+as show below.
+*/
+function squareTwo(x) {
+    return x * x;
 }
+/* it does not need a ; at the end
+
+The on diffrence with this way of writing a function is that it changes the way it is read. insted of the top to down approch it will 
+be moved to the top of their scope and can be uesd by all the code in that scope.
+*/ 
+
+/*
+Arrow Functions
+This would be the third notation for functions and looks diffrent from the other functions. Instead of using the function statement you would use
+whats called a arrow (=>) like so
+*/
+const powerTwo = (base, exponent) => {
+    let result = 1;
+    for (let count = 0; count < exponent; count++) {
+        result *= base;
+    }
+    return result
+};
+// when there is only one parameter then you can omit the parentheses and if there is a single expression then you can also omit the {}
+const squareThree = (x) => { return x * x};
+const squareFor = x => x * x
+//these two are the same excluding the diffrent binding names
+
+/* 
+The Call Stack
+*/
