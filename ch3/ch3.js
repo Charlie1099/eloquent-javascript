@@ -168,6 +168,25 @@ const squareThree = (x) => { return x * x};
 const squareFor = x => x * x
 //these two are the same excluding the diffrent binding names
 
-/* 
-The Call Stack
+ 
+//Optional Arguments
+function squareFive (x) {return x * x;}
+console.log(squareFive(4, true, "hedgehog"))
+// this works and will produce 16 as a value
+
+/*
+With arguments javaScript is broad-minded about the number of argumnets meaning that if you pass to many it will ignor them like the function above
+or if you pass to few it will assign undefind to them
+
+You should be cafule you could pass somthing that was not intended but the upside to this is 
+you can allow the function to be called with diffrent number of arguments like so
 */
+function minus(a, b) {
+    if(b === undefined) return -a;
+    else return a - b;
+}
+console.log(minus(10))
+// -10 becuse we did not provide the vaule for b 
+console.log(10, 5)
+// 5 we provided the value for a, and b
+
