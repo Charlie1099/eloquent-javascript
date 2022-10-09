@@ -187,6 +187,41 @@ function minus(a, b) {
 }
 console.log(minus(10))
 // -10 becuse we did not provide the vaule for b 
-console.log(10, 5)
+console.log(minus(10, 5))
 // 5 we provided the value for a, and b
 
+/*
+Recursion
+A function the recalls itself is recursive
+Pros
+-Bridges the gap between elegance an complexity.
+-Reduces the need for complex loops and auxiliary data structures.
+-Can reduce time complexity easily with memoization.
+-Works really well with recursive structures like tress and graphs.
+
+Cons
+-Slowness due to CPU overhead.
+-Can lead to out of memory errors / stack overflow excepitons.
+-Can be unnecessarily complex if poorly constructed.
+
+start with a absoult base case condition to brake out and next keep getting the problom smaller
+*/
+function findSolution(target) {
+    function find(current, history) {
+        if (current == target) {
+            return history;
+        } else if (current > target) {
+            return null;
+        } else {
+            return find(current + 5, `(${history + 5})`) || find( current * 3, `(${history * 3})`)
+        }
+    }
+    return find(1, "1");
+}
+console.log(findSolution(24));
+// This subject needs more study
+
+/*
+Functions and side effects
+
+*/
