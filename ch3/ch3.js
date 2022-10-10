@@ -223,5 +223,9 @@ console.log(findSolution(24));
 
 /*
 Functions and side effects
+functions can be roughly deveided into thos that are call for there side effects, value, or both.
+
+A pure function is a function that has a specific kind of value-producing function that not only has no side effects
+but also doesnt rely on side effects from other code.
 
 */
