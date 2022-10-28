@@ -192,5 +192,31 @@ function remove(array, index) {
 console.log(remove(["a", "b", "c", "d", "e"], 2));
 // ["a", "b", "d", "e"]
 
+/*
+Strings and there Properties
 
+You can ues properties like length and toUpperCase sence they are string values but you can not just make a new property for example
+*/
+let kim = "Kim";
+kim.age = 20;
+console.log(kim.age);
+/*  
+this will show as undefiend the reason is that vlaues of type string, number, and boolean are not objects so it will not store
+the new propertie also they are immutable.
+ 
+There are other usefull properties to be aware of
+*/
+console.log("one two three".indexOf("ee"));
+//this will get the index of the string that is contaning more than one character not the same as the array method that will only get one
 
+console.log("  okay \n".trim());
+// will show okay with the white space removed that is wht the trim will do
+
+console.log(String(6).padStart(3, 0));
+// shows 006 
+
+//you can also split a string on every occurrence of another string with split and join it again with join like so
+let sentence = "Secretarybirds specialize in stomping";
+let words = sentence.split(" ");
+console.log(words);
+// wil show [ 'Secretarybirds', 'specialize', 'in', 'stomping' ]
