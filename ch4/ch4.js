@@ -139,7 +139,7 @@ for (let i = 0; i < JOURNAL.length; i++) {
     // do somthing...
 }
 
-but with objects it is diffrent you would do this like so
+but with objects it is diffrent you would do this like so and this still works for arrays
 for (let entry of JOURNAL) {
     consle.log(`${entry.events.length} events`);
 }
@@ -160,6 +160,7 @@ function remember(task) {
 function getTask() {
     return todoList.shift();
 }
+
 //inserts the element to the front of the array
 function rememberUrgently(task) {
     todoList.unshift(task);

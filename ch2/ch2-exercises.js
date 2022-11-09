@@ -23,13 +23,16 @@ both shoould show
 */
 
 // Fizz Buzz
-for(number = 1; number <= 100; number++) {
+for(number = 1; number <= 15; number++) {
     let line = ""
-    if(number % 3 === 0){
+    if (number % 15 === 0) {
+        line += "Fizz Bizz"
+    }
+   else if(number % 3 === 0){
         line += "Fizz";
     } else if (number % 5 === 0) {
         line += "Bizz"
-    }
+    }  
     console.log(line || number)
 }
 // you could just do two if statments insted of the else if and one line them
